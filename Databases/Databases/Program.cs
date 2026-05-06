@@ -204,3 +204,32 @@
 
 //USE [DemoDb]
 //GO
+
+
+//CREATE TABLE[Customer]
+//(
+
+//    [Id] int IDENTITY(1,1) NOT NULL,--kolonata id kje bide od tip integer pocnuvajkji od 1 i plus 1
+
+//    [Name] nvarchar(100) NOT NULL,
+//	--Constraints na tablei ogranicuvanje 
+//	CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED ([Id] ASC)--rastecki redosled ASCENDING
+//)
+//GO
+
+//select za da vidime sto imame 
+//selectirame so mouse samo toa sto sakame da se izvrsi
+//
+
+
+//treba da gradime baza
+//bizni za vitalia
+//clienti vero,reptil,tinex stokomak itn
+//Client 7 biznis entiteti imame 7 zapisi 
+//around 100 emoloyees 
+//entitety businessentity vero mero,
+//emloyee vrabotenite
+//product
+//customer
+//order
+//order details
