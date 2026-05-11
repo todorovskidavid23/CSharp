@@ -89,6 +89,10 @@ foreach (string name in names)
         {
             count++;
         }
+        if (name.Equals(word, StringComparison.OrdinalIgnoreCase))
+        {
+            count++;
+        }//pooptimiziram
     }
 
     Console.WriteLine($"{name} : {count}");
