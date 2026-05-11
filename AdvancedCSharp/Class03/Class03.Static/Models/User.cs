@@ -5,7 +5,20 @@ namespace Class03.Static.Models
     public class User : BaseEntity
     {
         //public int Id { get; set; }
-        public string Username { get; set; }
+        private string username;
+        public string Username
+        {
+            get { return username; }
+            set
+            {
+                if(string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException("Username cannot be mepty");
+                }
+                username = value;
+            }
+        }
+        //public string Username { get; set; }
         public string Address { get; set; }
         public List<Order> Orders { get; set; } = new List<Order>();
 

@@ -23,6 +23,9 @@ using Class03.Static.Models;
 
 //MOZE DA SE POVIKAAT BEZ INSTANCA STATIC
 
+User newUser = new User();
+newUser.Username = "";//kje si vleze vo thro new exeption vo User
+
 //REISKORISTUVANJE
 
 ConsoleHelper.WriteError("Message ERROR");
