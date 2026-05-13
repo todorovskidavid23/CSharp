@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Generics.Domain.Models
+{
+    public abstract class BaseEntity
+    {
+        public int Id { get; set; }
+        public abstract string GetInfo();//radi ova se pravi abstract class
+
+
+    }
+}
