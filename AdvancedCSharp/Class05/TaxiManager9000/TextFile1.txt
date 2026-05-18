@@ -1,0 +1,12 @@
+service imame data 
+dataacess del tamu se desava toa,
+pristap do data
+
+n-tier architecture
+
+Presentation layer UI se sto gleda userot konzolnata aplikacija kje ni bide toa
+Business layer service layer cela logika
+data access layer komunikacija so data source
+entity layer Domain
+
+sekoj layer sto treba da ima vnatre

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="RecapClass04/RecapClass04.csproj" />
+  <Project Path="TaxiManager9000/TaxiManager9000.csproj" />
+  <Project Path="ValueReferenceTypes/ValueReferenceTypes.csproj" />
+</Solution>
