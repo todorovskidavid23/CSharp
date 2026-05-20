@@ -1,4 +1,4 @@
-namespace TaxiManager9000.Domain.Models
+namespace TaxiManager9000.Domain.Enums
 {
     public enum Role
     {
@@ -14,3 +14,5 @@ namespace TaxiManager9000.Domain.Models
         Evening = 3
     }
 }
+
+//od dataaccess kon domain

@@ -1,4 +1,5 @@
 using System;
+using TaxiManager9000.Domain.Enums;
 
 namespace TaxiManager9000.Domain.Models
 {
