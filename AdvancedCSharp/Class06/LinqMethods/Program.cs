@@ -74,7 +74,7 @@ IEnumerable<Student> programmingStudentsSqlLike =
         from student in SEDC.Students
         where student.IsPartTime
         && (from subject in student.Subjects
-           where subject.Type == Academy.Programming
+           where subject.Academy == Academy.Programming
            select subject).Count() != 0
         select student;
 
@@ -84,7 +84,7 @@ List<Student> programmingStudentsLambda =
     SEDC.Students
         .Where(student =>
         student.IsPartTime
-        && student.Subjects.Any(subject => subject.Type == Academy.Programming))
+        && student.Subjects.Any(subject => subject.Academy == Academy.Programming))
         .ToList();
 
 
@@ -142,3 +142,96 @@ List<string> distinctStudentNames = SEDC.Students
     .ToList();
 
 distinctStudentNames.PrintSimple();
+
+
+
+///////////////////////////////////////////
+///Class07 povtoruvanje i dovrsuvanje na class06
+
+//Select Many
+
+var partTimeStudentSubjects = SEDC.Students//lista od listi od Subjects
+    .Where(s => s.IsPartTime)
+    .Select(s => s.Subjects)
+    .ToList();
+//desen klik i quick watch
+
+//za da nemame lista od lista
+//pravime
+
+List<Subject> partTimeStudentSubjectsFlat = SEDC.Students//pretvara na edno nivi sega e samo List<Subjbject> a ne List<List<Subject>>
+    .Where(s => s.IsPartTime)
+    .SelectMany(s => s.Subjects)
+    .ToList();
+
+List<Subject> partTimeStudentSubjectsFlatDistinct = SEDC.Students//pretvara na edno nivi sega e samo List<Subjbject> a ne List<List<Subject>>
+    .Where(s => s.IsPartTime)
+    .SelectMany(s => s.Subjects)
+    .DistinctBy(s=>s.Title)
+    .ToList();
+partTimeStudentSubjectsFlatDistinct.PrintSimple();
+
+//distinct samo po edna vresnost
+//distinctby celosno objektite 
+
+
+//Except site osven ovie
+List<Student> exceptPartTime = SEDC.Students
+    .Except(SEDC.Students
+    .Where(x => x.IsPartTime))
+    .ToList();
+
+
+//ThenBy
+List<Student> sortedStudentsAsc = SEDC.Students
+    .OrderBy(s => s.FirstName)
+    .ToList();
+
+List<Student> sortedStudentsDesc = SEDC.Students
+    .OrderByDescending(s => s.FirstName)
+    .ToList();
+
+sortedStudentsAsc.PrintEntities();
+sortedStudentsDesc.PrintEntities();
+
+
+
+List<Student> sortedStudentAscThenBy = SEDC.Students
+    .OrderBy(s => s.FirstName)
+    .ThenByDescending(s => s.Age)
+    .ThenBy(s => s.Id)
+    .ToList();
+
+
+sortedStudentAscThenBy.PrintEntities();
+
+
+//GroupBy
+//
+//Organizirame 
+//srodni po nesto da gi grupirame
+
+//daj mi gi site predmeti od program academy
+//daj mi gi po grupi
+//
+
+//List<Subject> sortedAcademyType = 
+
+var groupSubjectsByAcademy = SEDC.Subjects
+    .GroupBy(sub => sub.Academy)
+    .ToList();
+
+foreach (IGrouping<Academy,Subject> academy in groupSubjectsByAcademy)
+{
+    Console.WriteLine($"Printing Academy {academy.Key}");
+    foreach(Subject subject in academy)
+    {
+        Console.WriteLine(subject.GetInfo());
+    }
+}
+
+
+Console.ReadLine();
+
+
+//ctrl r+r
