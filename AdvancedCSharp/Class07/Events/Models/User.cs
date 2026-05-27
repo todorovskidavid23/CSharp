@@ -23,6 +23,11 @@ namespace Events.Models
         public void ReadPromotion(ProductType productType)
         {
             Console.WriteLine($"Mr/Mrs {Name}, theproducts of type {productType} are on promotion");
+            if (productType == FavouriteProductType)
+            {
+                Console.WriteLine("MY FAVOURITE PRODUCT");
+            }
         }
+
     }
 }

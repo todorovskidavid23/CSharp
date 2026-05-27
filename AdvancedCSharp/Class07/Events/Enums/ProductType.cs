@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Events.Enums
 {
-    internal enum ProductType
+    public enum ProductType
     {
         Food=1,
         Cosmetics=2,
