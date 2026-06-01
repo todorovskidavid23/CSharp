@@ -1,4 +1,6 @@
-﻿namespace TaxiManager9000.App
+﻿using TaxiManager9000.Helpers;
+
+namespace TaxiManager9000.App
 {
     internal class TaxiManagerUI
     {
@@ -17,7 +19,7 @@
             try
             {
                 //ConsoleHelper.PrintTitle("\n\t*** Taxi Manager 9000 ***\n");
-                ConsoleHelper
+                ConsoleHelper.PrintTitle("\n\t *** Taxi Manager 9000 *** \n");
                
             }
             catch (Exception ex)
