@@ -1,0 +1,36 @@
+dodavame baza
+
+dva servia UI servirs bez biznis logika
+servisite si imaat kako frint end del toa sto kje mu se pojavi na user
+
+i userinterface user service povrzan
+
+sega soglavno meni povtorno odime so UI service za da go napravime 
+TaxiMangerUi na programa napravivme 3 dela imamae 
+domain site tabelite
+data acess baza na tabelite
+servince 2 del gi imam site biznis logika ili service layer ili biznis
+za kraj da imame przentaciski sloj samo sto go gleda korisnikot nassite servici Domain
+prezentaciski sloj se pokazuva ako se najavuva toj ne odi deriekno do baza tuku do servisen del i sega pravime komunikazija pravime so INTERFAES
+private redoonly IUserServide )userErvce;
+prvo e dobro da testiranje 
+Iusersevie imame logika namesto da ideme so service ideme so interface 
+TOJ INTERFACE NI NALSEDUVA NA POVEKJE SERVISI
+zoso interface podobro e so Dependencies
+i testovi kje se pravat
+
+imame ova e glaven i biten del construktor instanka koga imame interfase
+taa instanca kon kon servise da odi
+_uiSerice=new UiService();
+
+ICarService e dobro a ne
+ICarMercedesService x
+ICarAudiService x
+namesto toa da pravime pravime interface inicijalizacija
+ako ni treba da se vikne treba a se dodade koj service da ni raboti
+posle toa napravivme BAZA memory baza da imame svoj podatoci za da si se logirame
+
+vo menuto 33 IUserService CurrentService ni pokazuva za koj user ni e logiran za da ni gi pokazuva nekovie podatoci ROLJA
+da
+
+Glavno menu MAIN MENU SEGA GO PRAVIME spored ROLJA sto da mu se prikaze 
