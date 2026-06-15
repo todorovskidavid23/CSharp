@@ -1,6 +1,8 @@
-﻿using TaxiManager9000.Domain.Enums;
+﻿using System.Reflection.Metadata.Ecma335;
+using TaxiManager9000.Domain.Enums;
 using TaxiManager9000.Domain.Models;
 using TaxiManager9000.Helpers;
+using TaxiManager9000.Services.Enums;
 using TaxiManager9000.Services.Interfaces;
 using TaxiManager9000.Services.Services;
 
@@ -55,9 +57,112 @@ namespace TaxiManager9000.App
                         continue;
                     }
                 }
+                #region Main Menu
+                int menuChoiceNumber = _uiService.MainMenu(_userService.CurrentUser.Role);
+                if (menuChoiceNumber == -1)
+                {
+                    ConsoleHelper.PrintError("Invalid choice! Try again...");
+                    continue;
+                }
+                MenuChoice mainMenuChoice = _uiService.MenuItems[menuChoiceNumber - 1];//ako odbere 2 vo baza ni e 1 zatoa imame -1
+                //rpitap kon nekoja list so menu i mu odbiram listata enam da go zeme 1 tuku samata vrednost si e 0 
+                switch (mainMenuChoice)
+                {
+                    case MenuChoice.AddNewUser:
+                        ConsoleHelper.PrintInColor("=== Add New User", ConsoleColor.Cyan);
+                        string username = ConsoleHelper.GetInput("Username: ");
+                        if (!ValidationHelper.ValidateUsername(username))
+                        {
+                            ConsoleHelper.PrintError($"{username} must have atleast 5 characters!");
+                        }
+                        string password = ConsoleHelper.GetInput("Password: ");
+                        if (!ValidationHelper.ValidatePassword(password))
+                        {
+                            ConsoleHelper.PrintError($"{username} must have atleast 5 characters");
+                        }
+                        int role = _uiService.ChooseMenu(new List<string>()
+                        {
+                            "Administrator",
+                            "Manager",
+                            "Maintenence"
+                        });
+
+                        try
+                        {
+                            _userService.CreateNewUser(username, password, (Role)role);
+                            ConsoleHelper.PrintSuccess("Successfully created new user.");
+                        }
+                        catch (Exception ex)
+                        {
+                            ConsoleHelper.PrintError(ex.Message);
+                            continue;
+                        }
+
+                        break;
+
+                    case MenuChoice.RemoveExistingUser:
+                        ConsoleHelper.PrintInColor("=== Remove Existing User", ConsoleColor.DarkRed);
+                        List<User> users = _userService.GetAll().Where(x => x.Id != _userService.CurrentUser.Id).ToList();
+                        int menuChoice = _uiService.ChooseEntitiesMenu(users);
+                        if (menuChoice == -1) continue;
+                        _userService.Remove(users[menuChoice - 1].Id);
+                        break;
+
+                    case MenuChoice.ListAllDrivers:
+                        ConsoleHelper.PrintInColor("=== List All Drivers", ConsoleColor.Blue);
+                        break;
+
+                    case MenuChoice.TaxiLicenseStatus:
+                        ConsoleHelper.PrintInColor("=== Taxi License Status", ConsoleColor.Cyan);
+                        break;
+
+                    case MenuChoice.DriverManager:
+                        ConsoleHelper.PrintInColor("=== Driver Manager", ConsoleColor.Blue);
+                        break;
+
+                    case MenuChoice.ListAllCars:
+                        ConsoleHelper.PrintInColor("=== List All Cars", ConsoleColor.Cyan);
+                        break;
+
+                    case MenuChoice.ChangePassword:
+                        ConsoleHelper.PrintInColor("=== Change Password", ConsoleColor.Blue);
+                        string oldPassword = ConsoleHelper.GetInput("Enter old password: ");
+                        string newPassword = ConsoleHelper.GetInput("Enter new password: ");
+                        if(!ValidationHelper.ValidateStringInput(newPassword) || !ValidationHelper.ValidateStringInput(oldPassword))
+                        {
+                            ConsoleHelper.PrintError("Please enter values!");
+                            continue;
+                        }
+                        bool changeSuccess = _userService.ChangePassword(oldPassword, newPassword);
+                        if (changeSuccess)
+                        {
+                            ConsoleHelper.PrintSuccess("Successfully changed password!");
+                        }
+                        else
+                        {
+                            ConsoleHelper.PrintError("Password change failed! Try again.");
+                            
+                        }
+                        break;
+
+                    case MenuChoice.Exit:
+                        ConsoleHelper.PrintInColor("=== Exit", ConsoleColor.Green);
+                        _userService.CurrentUser = null;
+                        continue;
+
+                    default:
+                        break;
+
+
+
+
+
+                }
+                #endregion
+                Console.ReadLine();
             }
 
-            #endregion
+                #endregion
         }
         private void SeedData()
         {

@@ -16,5 +16,17 @@
         {
             return !string.IsNullOrEmpty(text);
         }
+
+        public static bool ValidateUsername(string username)
+        {
+            return username.Length >= 5;
+        }
+        public static bool ValidatePassword(string password)
+        {
+            return password.Length >= 5 && password.Any(x=>char.IsNumber(x));
+            //dali nekoj od karakterite e brojka ako e brojka togas e validen
+        }
+
+
     }
 }
