@@ -1,0 +1,336 @@
+ASP.NET MVC Web Applications
+Building a full end-to-end web application with all the bells and whistles
+
+open in Preview README.ME
+
+MVC Model View Controller
+
+Web Application 
+10 classes
+Dynamic Web Application
+Pattern : MVC
+POvrzuvanje na front i back end
+Realna baza ne so inmemory baza
+gradenje na end to end aplikacija
+=================================================================
+Gradenje Dynamic Wev Application
+imame Promena spored odredeni podatoci taa ni se menuva
+ne e staticna ne se fiksni podatocite primer Facebook sekoj koga kje si se najavi gleda razlicno
+Imame 
+Client side sto se bilda na samiot browser JAVASCRIPT na chrome,safari ... 
+Server side application kade sto sakamta aplikacija se obrabotuva vo nekoj server na korisnikot ne moze da go vidi deka se obrabotuva vo server
+dynamic edeniot kod e na client html a drugiot e server
+----
+Organiziranje 
+C#, OOP, HTML,CSS, JavaScript, SQL
+=================================================================
+ASP.NET
+-razliki so MVC so C#
+ASP.NET (Active Server Pages Network Enabled Technologies)
+framework koj sto ni pomaga da izgradime edna server side web application
+samo so C# ne mozeme da gradime web tuku samo console application
+nas ni treba ASP.NET framework so koj kje gradime web application
+so pomos na ovoj framework kako kje gradime:
+web app,
+APIs na sleden predmet, koga gradime api da spojuvame dve aplikacii da gi spoime da rabotat zaedno
+End-to-end solution- app sto kje ja gradime od 0 front end, backend, bazi
+Dynamic Wevsites se spojuva so End-to-end SI SE MENUVAAT Podatocite
+
+Imame FEUTERS gotovi raboti sto ne mora sami da gi koristime
+sto e framework - framework alatka koja sto sodzi gotovi funkionalnosti ne mora da gi kreirame
+polesno da ja izvrsime nasata rabota
+primer gradenje kukja: namesto sam da fatam da pravam vrata postoi framework sto si naracuvas masa gotova ti samo da ja postavis
+si postojat FRAMEWORKS:
+Hendlame HTTP Request od APS.NET pozadinski kje bide gotov i na toj hhtp request mu davame biznis logika get put post
+kako bisnis logika no nema pozadinski nisto sami custom da pravime mozeme cutom ili od framework
+custom ako pravime kje se odvoi nedela dena a samo da si se povika toj i toj http request.
+
+Routing URLs mnogu bitno spored ova URL kje odreduva sto da se prikaze na korisnik i sto se izvrsuva na ova URL
+url od user lisanje na useri sto kje se prikaze i stp lje se izvrsi
+Configuring web application: pozadinski del, koga ideme na produkcija koja sto sakame da nemame fiksni AZURE> od tamu da zimame podatoci
+Conneting front-end adn back end: kako redsoledno
+pattern design, arhitektura nie odlucuvame kako da se menadzira taa aplikacija
+
+..Mnogu vazen del
+ASP.NET Core novo od Microsoft integriran na site OS  ZA INTERVIEW RAZLICNI moderen nacin za integrianje na kakov bilo operativen sistem
+ASP.NET staro poranesto .NET Full Framework samo na OS windows
+/////
+KLUCEN DEL
+/////
+
+Difference between C#, .NET, ASP.NET and Visual Studio
+
+site ovie se razlicni edno so drugo ama se povrzani
+C# e glaven porgramski jazik ucime syntax klucni delobi klucni raboti
+ucime kako se posuva kod,
+so pomos na C# dokolku se stavi Console.WriteLine("hw") ova e obicen tekst C# bez .NET ne moze
+ne mozee da se runne kako plain text da se napise.
+
+.NET ni ja vrsi rabotata za run build i upotreba na kod
+za da proraboti ni treba .NET
+.NET ni ja kompjalira da ni raboti kodot
+.NET e software framework kompjalira, izvrsuva, biblioteki i menadziranje na C#
+2versions .NET Framework (star), .NET Core/ .NET (modern and cross- platform) za site OS
+=================================================================
+ASP.NET
+C# jazik, .NET build, koristenje za ewb aplikacija e ASP.NET WEB FRAMEWORK sto se builda na .NET
+features webapp, http request,routing, MVC, APIs, Server-side rendering
+=================================================================
+sekoj jazik si ima svoj framework
+VisualStudio IDE Integrated Development Environment.
+Programa kade spt omozeme da go iskoritime nastiot kod se se izbilda i so nego da ja debagirame app, testirame, USE INTELISENSE predlozi ni dava
+toa e od Visual Studio
+
+Console Application,
+ASP.NET MVC App
+APIs,
+Class Libraries
+
+site koncepti kje gi znaeme site koncepti na routing http request uste polesno kje ni bide INTERESNO :)
+
+==================================================================
+==================================================================
+MVC AS A PATTERN E PATTERN od samiot framwork MODEL VIEW Controller
+MVC kako pattern e DESIGN pattern nasiot kod da go organizirame ZOSO NI TREBA
+za nie da go napravime organiziran MNOGU, ne sakame vo eden file proekt da ni bide so html,css,js,i drugi frameworks,vue,react,angular,jquery
+C# del backednot, i kreiranje bazi i se toa vo eden folder
+ZATOA ni e potreben toj pattern
+SI GI IMA PODELENO STANDARTIDE
+
+STO E DESIGN PATTERN
+postoi za site jazici
+ORGANIZACIJA na samiot kod nesto organizirano od drugi developeri i nise mozeme toa da go napravime
+ako nekoe resenie im se povtoruva, se dogovaraat si pravime design pattern po koj nie treba da se vodime
+site tie porgrmeri si se vodat po toa
+PATTERN za da se vodime po toa
+bez pattern kodot e NEODDRZLIV 
+za da ne se sluvuca ova se koristi MVC PATTERN
+podelen na 3 dela :
+
+Model:
+ni se cuvaat podatocite i komunikacijata so BAZA samo KOMUNIKACIJA SO BAZA zema podatoci
+cuvanje na podatoci
+se cuva biznik logikata vo smila na ako nemame servisi , si krerame posoveni servisi servisite mu pripagja na ovoj del no ni e oddelen vo posebem proekt
+da ne ni se mesa logikata
+BIZIS logikata se stava VO MODEL
+podatoci,komunikacija so baza i binis logika
+modelot ne smee da znae nisto na FORNT END STRANATA front end e VIEW
+cel del sto go gleda korisntikot, tabeli, kopcinja
+html,mora da se naigja vo view
+
+View 
+ne vrakja nisto tuku samo prikazuva, toa sto nie kje mu kazeme
+modelot ne smee nisto da znae vo VIEW, ne mu e gajle dali e crbena boja da nema nikava povrzanost
+a view ne smee da znae koj podatok i od kade gi vlece znaci i view ne smee da znae za MODEL
+View nema nikava povrzanost so bazata zatoa E KONTORLELOT
+
+Controller
+MOZOK na patternot
+ni ja vrsi glavnata rabora, preku nego sve se dvizi
+preku kontorleto odi modelot
+ako korisnikot kje se najavi korisnikot go prasuva con dali da se najavi
+on si porveruva 
+kontroler mu kazua dali ima ili nema zabrana dali e velezn
+
+PRIMER:
+restoran 
+kako koristnik ideme vo restoran ni davaat MENU ni e VIEW nie samo citame ne znamee koj e gotvac
+za da poracame jadenje ne ideme u kujna tuku ima kelner toj ni e CONTROLLER toj odi kaj mene i me rasuva ide kaj kuvar i vika burerg i nego interesira za KOGO E
+posle KELENROT go zima burgerot i odi do MASATA
+korisnikot i bazata ne znaat eden so drug a za toa e tuka Controllerot mozo
+koja biznus logika, sto da se napravi,DALI IMA PRISTAP toj za da bara neso.
+JA VODI CELATA APLIKACIJA
+=====================================================================
+DESIGN PATTERN ne e biblioteka ne e framework ne e programski
+da se resi problem i site dogovoreno da se vodi po toa
+kako se sozdadeni od pogrameri sto imale problem 
+E STRUKTURIRAN DA SE RESI PROBLEM
+
+
+NE E OVE TUKU NA SITE APLIKACII MOBILNI, WEB, SEKAD SE KORISTI DESIGN PATTERN
+
+primer e so recepti ako sakap pizza si smislucam sam a priemr u jakoco kje si go zeam receptot
+=================================================================
+=================================================================
+=================================================================
+
+kako odi procesot na MVC
+
+1.User interacts with the VIEW
+VIEW sends request to CONTROLLER
+CONTROLLER processes the request
+CONTROLLER communicates with MODEL
+MODEL retrieves data
+MODEL returns data to CONTROLLER
+CONTROLLER updates the VIEW
+User sees the result
+
+1. vo view imame odredeni kopcinja kako user od view samo gledam i iklikam da se najavam na nekoja web starnica
+2. vie go konektira controoelrot e HTTP baranje GET
+3. controlerot odlucuva sto ponataka gleda toj sto kliknal ima moznost taa funkcija da se izvrsi
+4.ako smee si prdoulzuva si se dvizi vo samiot controlet, pusta baranje i go nosi do modelot mu prakja do moedlot
+5.modelot go obrabotuva baranjeto gi sobira podatocite i pocnuva kon vrakjanje na podatocite do userot
+prvo od modelt gi pakuva mu gi dava na controlerot i nosi go tamu kade sto treba, gi ldea podatocite i mu gi prakja na samiot korisnik
+CELOSNA PODELBA NA KODOT
+
+celo flow
+
+User clicks "View Products"
+Controller receives request
+Model retrieves products from database
+Controller sends products to View
+View displays products
+
+User request order so online prodavnica ,bara request pozadinski so brojce, isprakja request to controller , controllerot go pregleduva baranjeto 
+ovoj korisnik ima dovolno pari na smetka provekra, moze da ide do modelot so svoe id isprakja do model i model do baza dali se zadovoluva 
+id so 10 proizvodi baranjeto ima id si komunicira so bazata i dali tie prozvodi gi ima vo baza
+kje vrati rezultat kje vrati pobratna infomacija so tie proizvodi modelot ima podatoci ima podtoci od baza
+i mu vika na contolerot userot gi ima site podatoci vo modelot is obrabotuva i vo contolert uspesna naracka kazi mu deka kje mu stasa za 5 dena
+site podacoti od controleot mu dava na view mu pokazuva toa na Userot deka mu e uspesna narackata
+koga gradime application pred vremed a se nacrta sto n treba
+funckionalnosti controlerot kakvi baranja, modelot, kakvi podatoci imam vo bazata
+OVDE TREBA DASE POCNE od strana na USER kako treba da se obraboti kako treba pozadinski da funckionira
+
+
+=====================================================================
+Controller
+mozok na aplikacija ne samo toa tuku e i KOORDINATOR sto da zeme koga da zeme, 
+glavna uloga mu e:
+1Prifakja request na userot korisnikot od front edn gi prima baranjata
+2odlucuva sto treba da se izvrsi koj model treba da se iskontaktira
+3koj service da se upotrebi za da se izvrsi biznis logikata
+4.con vrakja response krajniot response SAMO VIEW prikazuva
+
+so pomos na controller imame povekje organizacija povekje bezbednost mnogu polesno 
+so novi features da se raspredeli lesno
+DataAccess controler service pa modelot
+ i na modelot i mal del na kontroleot
+imame 
+
+
+======================================================================
+Model
+
+glavna cel : cuva podatoci sto treba da se prikaze VIEW imame ovde biznik logika ovde i vo controler deka vo view ne smeeme da imame biznis logika
+vo servisec
+komunikacija so data baza
+komunikacijata samo so kontroleot MODEL SO CONTROLER do VIEW ====nikako MODEL so VIEW DIREKT====
+Modelot ne treba nisto da znae so userto ne znae ni koj user bara
+
+======================================================================
+VIEW
+Front end del samo prikaz
+moze d aima biznis logika NO OVDE NEMAME
+Server side web application
+vo ovoj view moze da ima samo del sto kje se prikaze ova priakzi mi go ne e bitno od kade mi e ovoj model ovie podatvi koi mi se i od kade mi se zemeni
+KAKO IZLED
+koga kje pobata neso user da se prikaze na VIEW delot
+
+
+======================================================================
+Zosto e loso bez MVC
+app kje bide haoticna
+kodot kje bide tezok za oddruvanje premnogu kod ako treba promena moze da nastanje problem
+security del kje imame zgreseno i slavi za security BRZO PROBIVANJE
+MVC se raboti TIMSKI
+
+
+
+
+
+
+
+
+
+
+
+========================================
+
+KRERANJE APLIACIJA KUCAME MVC
+DOmain mdeli pravime clasite,  tabli vo kalsa
+bazata, komunikacijata so baza,
+NEMA NESO LOGIKA nov folder SERVICES biznis logikata
+tabeli, komunkacija so baza i dopolnitelna logika
+==========================================
+VIEW
+se sto se prikauva na korisnikot
+
+RAZOR sintaksa 
+sintaksa na HTML vo C# .cshtml files
+sekoe view si krira posebno prikaz na pocenta strana view za produkt sekoj servise novo view site potrebni .cshtml prikazi
+
+vo Shared imame web strana 
+layout .cshtml
+pocetna strana sto se prikazuva glaven html site povrzuvanje se tuka link header footer glaven del nav bar
+se e ovde 
+sinaksa koj controller da se upotrebi asp-controller
+
+
+HOME imame
+index i privacy
+pred da ideme na controller 
+wwwroot si kucame css html no mozeme i javacript libraries jquery frameworks site tie idat na wwwroot css javascript
+react vie sve se vo wwwroot css,js,lib,sliki itn
+=======
+
+Controller
+sto sve ima kje objsnime
+kako da prepoznaeme kako e api ii controler MVC
+imepaController : Controller
+mora da nasleduva od Controller vo vo imaeto da ima Controller
+WevApi kje ima drugo nasleduvanje
+
+skoe baranje e ACTION akcii 
+kolku ni se potrebni tolku akcii imame po default kao nemame naznaceno e GET BARANJE SEKOJA AKCIJA E GET BARANJE
+Conteolerot vrakja View i si vrakja returb View();
+sito ime Index
+return samo viwe treba da barame vo view view sto se vika Index.cshtml
+
+https://localhost:7111/Home/Privacy koe view se vrakja od koja akcija
+=================================
+
+Program.cs se konfiguraciite 
+nemame povikuvanje na ervisei to si go pravi controllerot
+za start
+pravime celosta konfiguracija na nasata web api
+kako da se startne 
+Builder prvo
+da se podesi asp.net
+
+builder.Build() pri bildanje kje se izvrsi ova
+da se ukluci nasata aplikacija
+MapControllerRoute rutite na samiot controler
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+Routing za retirect exeption itn.
+
+========
+appsettings.json za konfiguracija 
+komunkiacija so baza ovde kje treba connection strings za pvrzuvanje so baza
+logging itn.
+racno da se kucaat
+
+Program.cs i appsettings.json imame konfiguracija ova e povrzuvanje so fiksni stvari
+
+
+Dependencies pa Frameworks i vnatre imam paketi sto kje imame mnogu novi
+
+
+instanci vo praograms cs kje bidat vo controller
+privare readonly ILogger<HomeController> _logger;
+
+BITNO sto pomalce kod vo akcii
+tie se samo za koordinacija
+DOPOLNITELNO ne e samo View() tuku json ima i samo string vrati nekoj string ili brojka
+ama si se vrakja View();
+
+
+
+
+
+
+
+
