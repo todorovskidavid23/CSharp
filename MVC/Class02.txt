@@ -251,3 +251,14 @@ povekje akcii razlicni route ne smee ista route
 
 nad akcijata si se pisuva ova samo
 
+2-iot nacin 
+// students/getById/1 or students/1 -- custome route
+
+[HttpGet("getById/{id:int}")]
+public IActionResult GetById(int id)
+{
+    return Json(_students.FirstOrDefault(x => x.Id == id));
+}
+
+skoja akcija mora request
+kje si piseme route kje si imame attribute ,ne ni treba nisti vo Program.cs
