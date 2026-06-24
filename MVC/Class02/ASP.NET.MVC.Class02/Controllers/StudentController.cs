@@ -40,7 +40,7 @@ namespace ASP.NET.MVC.Class02.Controllers
         };
         [Route("all")] // students/all //this is the same as the previous one, but this is more specific, because it specifies the HTTP method
         [HttpGet("all")] // students/all //this is the same as the previous one, but this is more specific, because it specifies the HTTP method
-        public IActionResult GetAllStudents()
+        public IActionResult GetAllStudents()//List<Student>
         {
             return Json(_students);
         }
@@ -50,6 +50,27 @@ namespace ASP.NET.MVC.Class02.Controllers
         public IActionResult GetById(int id)
         {
             return Json(_students.FirstOrDefault(x => x.Id == id));
+        }
+
+        [Route("id/{id}/name/{name}")] //students/id/1/name/Bob
+
+        public Student GetStudentByIdAndName(int id, string name) //za da mozeme nesto direkno da vratime
+        {
+            //da ni vratat modeli logika za filter
+            //razlikata imame moznost povekje rabori da se vratat vo IActionResult 
+            //a ovde mora da se vrati Student
+            return _students.FirstOrDefault(x => x.Id == id && x.FirstName == name);
+
+        }
+
+        //defult parametar koga se prakja query parametar da si imame default
+        //da ne bide nikogas null po id koga bara 
+        //defult da ni bide 1
+
+        [Route("byId/{id=1}")] //student/byId/1 kje ni bide default koa nisto ne mu stavime za parametar
+        public Student GetStudentByIdWithDefaultValue(int id)
+        {
+            return _students.FirstOrDefault(x => x.Id == id);
         }
 
     }

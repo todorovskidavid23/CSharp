@@ -1,0 +1,121 @@
+Models
+kakvi tipovi na modeli imame
+zoto ne sakame direkto da ni cepka vo modelot
+patternot si ima napraveno controller za da si gi koristi modelite
+
+Modelot onoj del kade sto cuvame podatoci kadee sto gi cuame podatocite vo baza
+modelite ni oznacuvaat neso sto ni ja opisuva nasata aplikacija
+samite tabeli od baza
+sekogas sekoja app ni zapocnuva od modelite
+vo modelite pravime conif za nasa app
+ako sakame da imame menadziranje na studenti
+Prvo sto treba d a se mendazira 
+Realen svet i treba da se zapisat vo OBJECT
+sekoj od nas si imame svoie Id
+edna class so modeli i koj tip na modeli imame poekje tipovi na modeli.
+Modelot e komunkacijata so bazata so pomos so niv mu kazuva i zemame i davame podatoci vo od baza
+IMEME biznis logika ne samo Serives tuku direktno da si imiame atributi si ogranicuvame
+da se ogranici 
+prodavniza za alkohol ne smee sekoj da naraca po 18god ditektno moze da se ogranici Range na samiot produkt da bide 18+
+studenti da imame sudent pomal od 18 na smee
+Sistemot da se odbie pred da se zapise vo baa
+
+direktno vo modelot se zapisuvaat
+
+kakrateristiki na model:
+imame povekje:
+Data Reoresentation nie go prezentirame samiot objekt so structura(kako ja strukurirame kolku objekti ni se potrebeni da se opise nasta app
+ako treba online prodavnica kolku modeli ni se potreni User,Product,)
+Atributi(propertirs sto se opivuvaat ovie objekti mora da si sorzi porpertis id,name,goridni)
+Relationships(povrzanosta 1:1, 1:n,m:n),
+Constraints(direkt vo model da si se ogranica)
+Biznis lOgika(dopolnitelni validacii vo smisla na nekoj Range za odredena poraka, servise logiki, CRUD operacii)
+DataAccess(komunikacija so baza ,Datavases, Files,External Services)
+ne sekogas aplikaciite koristat so bazite sto ucevme sql ista postapka na povrzuvanje so baza
+namesto MicrosoftSserver nie vo PostGre
+
+
+Kade se upotrebuvaat modelite
+Modelite niz cela aplikacija ne se vo delot na MVC, nie treba da zemeeme podatoci da pravime logika so podatocite.
+niz cela aplikaciaj si gi korisime modleite KAKO SE PODELENI
+
+Domain Layer :
+Delot kade sto se prikazuva kade sto princiot de l go pravime opisot na realnite svrari
+Userclass,ProductClass vo delot na modelot imame i 
+DataStrutures vo domaiLayer imame povrzuvanje NE E SO BAZA OVDE kako ovde gledame kakvi porperties da se dodata za da si se vrzat so bazata
+sekoe propertie KOLONA VO BAZA
+Biznis Rules atrivutite za ogranicuvanje dali edno pole da bide requeied ,range, ogranicuanje, default vrednost, RULES NE LOGIKA
+NA BIZNIS LOKIGATA SE BIZNIS RULES
+SLEDEN CEKOR
+DataAccessLayer
+komunikacija so baza
+ovde si rpavime komnukacija so baza na sila stapuva kako da komunicirame so baza
+Kako da kou 2 nacina:dali modelite kje bidat kreirani od strana na baza ili ke bidat rkeirani nie
+Domina Layer sme kreirale modeli vo Baza ili obratna Vo dataaccess sme napravile dmain layer napravile baza
+OVDE SAMO SO KOMANDA AVTOMATSKI SE PRAVI VO DOMAIN LAYER
+poseben model sekoj prodict kolona ti koloni poperties a imeto na kolona
+USER MODEL kolonie properties.
+
+ApplicationLogicL
+Logikata odnosno spagjaat DataValidation,Calcualtion,Business rules
+zosto se korisat modelite za da vraime podatoci . Vo servisite pravime logika za skoj model si imame logika CRUD OPERACII vrakjaat modeli
+koj model da se vrati
+podatocite od baza bitni modeli ja pravime logikata kako da se zemat podatocite
+C# bez modeli ne moze da se prikazatvo ApplicationLogic imame logka sto zemame od baza i vrakjame model
+si doagja posle seledn del
+
+USER INTERFACE
+ne mozat da se gleaat view ne se gelda modelot
+Preku controller gotovi metodi sto se povikuvaat modelite da se dadat na view imame Controllerot koha se vika view si isprakja podatoci od modelot i nego ne go zasega od kade se podatocite
+ne e seven od koja baza zema podatoci.
+
+Models posle 1-va PAUZA
+malo povtoruvanje 
+da se prepoznaat kade i kako da se koristat
+
+KAKVI TIPOVI NA MODELI IMAME:
+razliki imameod model na model
+VAZNO E DEKA IMA 3 tipa na modeli
+vo MVC imae 3 tipa na modeli
+1model : Domain Models Entities Entity modelite stose koristat na opisuvaenje na realni stvai Domainski modeli, so baza sto ni glumat baza Domainksi Modeli koristenje za DataBase Document Collection, Stored Application Data tie ni se glavnite osnovnite modeli
+2model : View Models ovie tipovi na modeli sto se koristat samo za prikaz na korisnikot ednostavno ime View se koristat za UI delot CELTA E da ne se rpakjaat site modeli, ako sakame si se noagjaat delcinja od glavniot MODEL se kreiraat vrz osnova na DOMAINSKI MODELI
+First name, Lastname, Password, Email vo Domain models
+ZASTITATA SE KORISTI VIEW MODEL se rkeira userViewModel kje gi sorzi proeprties so koi sto sakam da gi prikazam vo UI delot
+kosristeje vo VIEW namesto Domainski glavni modeli Ogranicuvanje na podatci, bezbednost, dopolnitelno dve popertinja vo  edno primer First Name
+izledaat isto no razlicna upotreba e View model 
+Domasnki model ni sluzi za iopis i povrzuvanje so baza i opisn na realen del
+View MODEL samo za prikaz na podatoci samo na VIEW DEL gi prikazuvame podatoci
+DTO Data Tranfer Object Model koj SAMO NA PRENOS NA PODATOCI ova dto se koristi API,SISTEMI,POVRZUVANJE NA 2 backedn serveri, slicno na view model
+da imame bezbednost da ne PRIKAUVAME SAMO ISPRAKJAME PODATOCI
+API tamu view modeli ne ni trebaat samo DTO kje koristime
+
+PRENESUVANJE PREKU API SAMO SO JSON NE RABOTIME SO VIEW NEMA STO DA PRIKAZEME SAMO TREBA 
+PRENOS NA PODATOCI
+
+vo Models si praime Folderi dali mi se 
+ako vo edna clasa imame vo imeto View toa ni e UI i e ViewModel
+kako kje se razlikuvaat
+da vrakja studenti i courses
+RAZMUSLUVANJE
+
+1. Kakvi domainski modeli ni trebaat? akademija mi treba students,courses,trainers USER MODEL i od toj da se izvadat studetns trainer
+Domains ili Entities za glavnite domanski modeli
+Domainski Modeli ni se Students i Course sto kje komuniciraat so baza
+sekag praime baza za da korsitime no sega INMEMORY BAZA
+1.nacin glaven del kako da izgleda bazata
+2.dataaccess komunikacija so baza strikno so DomainModeli glavna komunikacija so baza
+3.
+za da zacuvame vo daomnski model ni treba instanca
+
+SERVICES 
+treba da napravime logika za da vrati nesto
+ako pravime nekakva logika koj e aktiven course da si napravime po sekoj student da mu bidime koj mu e aktiven course
+ni treba nov Folder stose vika Services
+
+NAPRAVIVME DOMAINSKI MODEL
+NAPRAVIVME BAZA
+MODELOT SE KORISTI I VO SERVISITE
+NAPRAVIVME LOGIKA SERVISE DA MI VRAKJA ID 
+SLEDEN CEKOR E CONTROLLER
+
+MAPIRANE OD MODDELSKI DOMAIN VO DTO MODEL

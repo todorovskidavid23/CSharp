@@ -86,11 +86,11 @@ akcijata kje ja sorzi responsot sto kje vrati i koja logika kje ja povika
 kakov request kje imaa taa akcija, sekoja akcija mora da sorzi http request bez toa nema akcija
 vo ponovite modeli deka sekoja metoda sto e ima HTTP request znaci avtomatki stanuva http request
 imame controller sekoja akcija mora da ima http request so ova URL treba da odgovorime koja kacija ni e ovoj request http 
-get ni vrakja samo podatoci
-post za da dodademe neso vo baza da krerame
-delete da izbriseme nesto od baza ama hard delete 
-put promena ili update vo baza da gi smeni podatocite: na fb da gi smenam podatocite ime prezime password stiskamee update cel object odi ime prezime passowrdodnovo cel objekt
-patch headers da se update PODOBRO ama samo delce menuvam ne cel object vo baza samo edno property se menuva
+----------get ni vrakja samo podatoci
+----------post za da dodademe neso vo baza da krerame
+----------delete da izbriseme nesto od baza ama hard delete 
+----------put promena ili update vo baza da gi smeni podatocite: na fb da gi smenam podatocite ime prezime password stiskamee update cel object odi ime prezime passowrdodnovo cel objekt
+----------patch headers da se update PODOBRO ama samo delce menuvam ne cel object vo baza samo edno property se menuva
 POBRZO
 sekoja od akciite mora da return time 
 !STO KJE SE VRATI MORA DA SE ZNAE!
@@ -262,3 +262,37 @@ public IActionResult GetById(int id)
 
 skoja akcija mora request
 kje si piseme route kje si imame attribute ,ne ni treba nisti vo Program.cs
+
+//Od prethodniot cas imame za controller i sto se sorzi vo nego
+//uste nekolku akcii
+da si povtorime delovite sto se najvazni za edna web app da se izgradi
+sto e controller i kako se gradi
+glavata ili mozokot na aplikacijaa i kontrolira sto da se odviva most megju model i view
+kako izleda eden controller class : vo nea nema nisto da nasleduva od vekje postoecka class nareecna Controller
+mora imeto na controller samiot .net si sodzri Contriller i imeto vo ednina primer StudentController
+Akcii: controller ne moze bez niv ACTION metodi site sto se naogjaat vo samata Class sto primaat http request vrakja IACTIONRESULT e ACTION
+get
+post
+delete 
+put
+patch
+
+interface ili class dali preku impeletaciite ili preku class
+
+za da funkcionira za da povika http get ni e potreben route
+Route e edna od lavni raboti toj ni kazuva koj controller i akcija da se koristi pri koritenje na stranata
+sekoj klik treba da ima routa sekoja akcija treba da ima route
+
+dve akcii ne smeat da imaat ista route.
+povekje akcii na ista route i ne znae koja da se povika
+
+//ATRIBUTE ROUTING
+povekje se koristi i poednostavno deka odma si se pisuva o controllerot 
+na pocetok [Route("students")]
+kako pocnuva port/students
+HttpGet moderen nacin samiot reqiest  moze odma da imame route []
+ogranicuvanje na samiot parametar si davame ogranicuvanje da bide id:int
+
+//CONVENTIONAL ROUTING
+
+
