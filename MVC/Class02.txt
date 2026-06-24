@@ -1,0 +1,253 @@
+Class02 MVC Controllers
+
+Controllers 
+
+Model View Controller Pattern 
+
+sto ni e dozvoleno da prikazeme na korisnikot.
+glavna cel da hendla http baranja, da vrati odgovor na korisnik i da osluc koja akcija da se izvrsi
+koja akcija sto da se izzvrsi koga korisnikot kje pobara.
+Glavna cel Bez nego ne moze da funkcionira . View komunicira so controllerot, a controlerrot da go iskomicira modelot i sto da se izvrsi da prikaze.
+kako se kreira vo code controller
+Create new project -> mvc
+Po default ni dava koga kje otvorime Controller Models Views
+Controllers denes
+Models komunikacija so baza i tabeli
+View sto gleda korisnikot
+appsettings.json
+Program.cs samo konfiguracii.
+1.Kako se kreira controller po default imame HomeController
+koga se kreira mora da bide vo Controller Folder sekoj sto kje se kreira moza da se javi greska ako ne e vo soodveniot folder.
+Avtomatski kreiram Controller.
+
+==========Controllerte se kreiraat vo sporedba so modelite==========
+kolku modeli tolki controllers.
+kako se kreira: dva nacina
+controller e obivna class, za da stane controller za da prima site http baranja , mora da nasleduva od : Controller 
+ako ne sakame
+treba se racno da se kuca..
+Kako se imenuva: na kraj na imeto mora da ima Controller mora da bide CampelCase 
+
+Bez akciive sto gi ima controllerot togas kje si bide obicna class.
+
+kako se kreira controller:
+Add -> Class -> StudentController 
+ovaa clasa sodrzi metodi sto ni sluzat da hendlame request site http , dopolnitelno ni ozovmozuva po koja osnova da gi fakjame niv, i ni dozvoluva gotovi metodi kako da go vratime Samiot odgovor.
+morame da vratime odgovor do korisnikot ne mora da bide samo View ne mora sekogas da ni vrakja html stranica.
+///
+da go vidime henladnjeto ni e potrebno samoto imenuvanje po Domain imeto na controllerot Home i imeto na samata metoda site metodi se narekuvaat AKCII ne se vise METODI !!!!
+
+vtor nacin da kreranje na controller:
+Add-> Controller-> Empty i si se kreira controller so edna Index akcija
+==========
+koi mu se rabotite sto treba da gi izvrsi Samiot controller, koi mu se vrednostite na Samiot controller.
+1.mora da gi hendla requestite GET,PUT,POST,DELETE,PAGE!
+2.moze da mu dojdat od mobilen ,
+3.requestot ni doagja od delot na so pomos na route go henldame requestot se ni zavisi od nasata ruta 
+4.rutiranjeto mora da napravi rutiranje SEKOJA AKCIJA TREBA DA IMA SOPSTVENA ROUTE, sto treba korisnikot da ja gagja! 
+5. vo samata routa sekogas mora da ni isprati nekakvi stvari
+vo sekoja http request ima request header ni sodzri content type, jazik, TOKEN, token vazi dali imame pristap do tamu ,SEKOGAS IMA HEADER vo HTTP REQUEST, input
+route parametri se koga imame input polinja tie polinja vrednostite sto gi popolnuva korisnikot mze da se ispratat po route parametri, treba da bidat , namesto vo rutata da isprata kako OBJEKT.
+koga kje gradime akcija preku sto da se kreira.
+kje prima akcija query string, toj e na samata route dokolku imame ? i vrednost, ako imame ? vo route imame query string
+input key/vresnosta na input.
+query parameter ako sakame direkto da ni prati preku parameter znaci na saata ruta treba da isprati VREDNOSTA ISPRATI MI JA
+REDOSLED MNOGU E VAZEN
+vo controller DOMAIN/PORTA/IME NA COPNTROLER/IME NA AKCIJA/ako ima quey parameter si ide na posebno mesto.
+koga se isprakjaat ovie baranje CONTROLEROT KREIRA BIZNIS LOGIKA koga kje go najde toa sto barame toj ja bara akcijata sto taa sme ja pobarale. stom znaes koja akcija e treba da go pogodis i da vidis koja biznis logika mi treba. koga se zavrsuva logikata ulogata na controller mu e vrakjanje na podatoci.
+RAZLICNI TIPOVI NA VRAKJANJE NA PODATOCI.
+1.HTTP content znaci da mu vratime stranica ili VIEW mozeme da mu vratime json pa toj na front kje si napravi dizajn
+2.nisto da ne vrati prazen samo izvrseno da e
+3. prefrli me na nesto, samo prefrluvanje preimer login i te nosi na nekoja strana TOA SE PRAVI SO REDIRECT
+
+Samata clasa kon controller
+AKCII Action Methods
+Product Controller i details akcija parameter sto go pustil  korisnikot ID nekoe 
+prodictid5 da ja vidi vo baza i da ja prikaze.
+da pogodi routata na controlel ide na product ide Detail akcijata i sto prima QUERY parameter.
+Pristap dali ima do nea i posle biznis logika za toa id5 i da si se vrati da pokaze na view.
+controller akcija si ja zima akcijata pa biznis logika, prasuva bazata i vrakja return View() 
+vo View imame samo Model.Name ovoj Product. NAme propery od clasa Product se zema.
+
+RedirectToAction,PlainText,Sting,Integer
+
+
+UserBara id controlletor go prima requestot toj go prasuva modelot za taa kniga taa mu vrakja dali postoi ili ne ako postoi mu dava info i posle vo view si se prikazuva
+
+
+Sledno nesto sto treba da ucime e Action i posle kako da gi podogime tie akcii so 
+
+==========
+Action Menues Eden controller nema nikakva uloga ako nema metodi tie metodi od denes pa navaka kje gi narekuvame ACTIONS AKCII ACTION MENU, Index(), 
+Sto pravat tie  
+ni gi pravat logikite koi treba da se izvrsat vo sekoj moment koga kje se prati toj http request action metod od strana na controller
+action metodite se glavna logika vo controller kukja a akciite se site sobi vnatre
+akcijata kje ja sorzi responsot sto kje vrati i koja logika kje ja povika
+kakov request kje imaa taa akcija, sekoja akcija mora da sorzi http request bez toa nema akcija
+vo ponovite modeli deka sekoja metoda sto e ima HTTP request znaci avtomatki stanuva http request
+imame controller sekoja akcija mora da ima http request so ova URL treba da odgovorime koja kacija ni e ovoj request http 
+get ni vrakja samo podatoci
+post za da dodademe neso vo baza da krerame
+delete da izbriseme nesto od baza ama hard delete 
+put promena ili update vo baza da gi smeni podatocite: na fb da gi smenam podatocite ime prezime password stiskamee update cel object odi ime prezime passowrdodnovo cel objekt
+patch headers da se update PODOBRO ama samo delce menuvam ne cel object vo baza samo edno property se menuva
+POBRZO
+sekoja od akciite mora da return time 
+!STO KJE SE VRATI MORA DA SE ZNAE!
+vo API so pomos na API json isprakjame da moze da se zeme url i da si kaze upotrebi go ova kade sakas
+
+kje go zeme kako json a kje go vrati kako VIEW
+
+kako funkctionira:
+url mora da ima kje go klikne nekoj toa:
+
+кога ацкијата  e najdena samo si ja povika taa logika za taa akcija 
+taa logika kje si se izvrsi i sto e najbitno MORA DA VRATI REZULTAT STO E ACTIONRESULT
+sekoj resultat ova e class sto postoi vo Samiot controller da ja povikame
+zosto
+zatoa sto
+od edna akcija da si vratime vekje postoecki RESPONSI view,json,redirect, text ,string
+se e toa zaradi ACTIONRESULT
+pozadinski si vrakja VIEW ako vikame return VIEW()
+
+koga kreirame samata akcija imame public IActionResult go koristime interface i class sekogas e podobro so interface za da ne zavisime od samata class
+
+ni ovozmozuva da vratime json,html
+
+STO VRAKJA edna akcija ACTION RESULT vrakja!
+view result ama e ACTION
+
+==========
+koga vrakjame VIEW kako ja vrakjame html stranata koga psiuvame return View();
+kako znaeme koe view mi se povikava taa akcija
+view samo pisuva nema ime na objektot si konvekcija Samiot .net 
+koga kreirame view imenuvanjeto e mnogu vazno
+RazorClass vo folder View
+za sekoj controller poseben folder so view
+Home-> treba a ima privacy view deka ackijata see vika Privacy.
+ime na akcija ime 
+
+kako sting imeto na para
+
+
+sekoj klik e Action 
+RedirecToAction("imeto na akcijata kade sto sakame da ne vrati");
+samo vo Samiot controller kade sto se naogja tamu se vrakja!!!
+
+public IActionResult Index() // localhost:port/home/index
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return RedirectToAction("Index");
+        }
+
+kje ne vrati do ovaa akcija ovde dekae vo ist controller
+
+==========
+ako sakame na prvo mesto e akcijata posle imeto na controllerot
+==========
+
+clasite sekogas vo folder models
+
+
+KAKO DA GO IZRUTIRAME KAKO STO NIE SAKAME
+rutiranje convencinalno sto imame vo program.cs kako treba da se gagja edna akcija
+za da ja pogodime 
+Domain:5250/ime na controller Courses/ne e ibitno dali e golema ili mala bukva getAllCourses/
+public IActionResult GetAllCourses()
+{
+    return Json(_courses);
+    //po defult , the method name is used as the route name, so the route will be /courses/getallcourses
+    //http get for default, so the route will be /courses/getallcourses
+    // za da ja pogodime mora url da bide: localhost:port/courses/getallcourses
+    // convention based routing, the route will be /courses/getallcourses
+    // if we want to change the route, we can use the [Route] attribute, so the route will be /courses/all
+    // if we want to change the route, we can use the [HttpGet] attribute, so the route will be /courses/all
+    //list of objects, so we can use the Json method to return the list of objects as JSON
+    //
+}
+
+vo controller Courses nemame akcija index imame sega GEtAllCourses 
+samo po id primer
+
+public IActionResult GetCourseById(int id)  //localhost:port/courses/getCoursesById/10
+{
+    return Json(_courses.FirstOrDefault(x => x.Id == id));
+}
+
+//localhost:port/courses/getCoursesById/10
+/////////////////imaenacontooer/imenaakcija/queryparametarIBrojkaStavame10/
+
+
+CUSTOM KAKO DA SE NAPRAVI!
+
+
+
+za sekoja akcija da imame sopstven url
+STO E URL STO E ROUTING, WEBAPI
+
+sto e ROUNTING ni slusi za da znaeme sto povikuvame koj controller koja kcija idali kje ispratime parameter
+celata rabota na routing po default sekoja aplikacija si ima svoja konvecija
+http get imame i default route ime na imeNaController/imenaAkcija/opionalnoparametar
+Konvencianlano vo program.cs Conventional routing MapControllerRoute funkcija stom uda dava na controller default ruta
+patter: po koj patter da se dvizi, ? e opcionalno ni dozvoluva null
+imenaController/imeNaAkcija/mozeineParametar
+nie mozeme da si pravime i nasha da imame ogranicuvanje site ruti da se na edno mesto NE SE KORISTI MNOGU
+defaults: 
+Routing so atributi nemame nisto vo program.cs tuku odma vo samite kacii si gi pisuvame kako sto sakame
+
+app.MapControllerRoute(
+    "allCourses", //ime na samata ruta
+    pattern: "courses/allcourses", //kako da se odviva rutata !!!
+    defaults: new { controller = "Courses", action = "GetAllCourses" }
+    );
+
+
+
+Namesto IActionResult mozeme i 
+public JsonResult GetCourseByName(string name) //localhost:port/courses/ASP.NET%20Core%20MVC -- custome
+{
+    return Json(_courses.FirstOrDefault(x => x.Name == name));
+}
+strikno nesto sto odma se ogranicuva samo da dade JsonResult
+
+
+SO ATRIBUT ROUTING
+e koga vo Samiot controller stavame custom routing vo program.cs se finksi a ovie so pomos na atroboute Route se vo controllerot
+
+2 nacina kako se pravi
+nad controller [Route("students")]
+zapocnuva so ovaa ruta
+[Route("students")] //localhost:port/students
+ime tuka prima ime na Routa mnogu cesto pak se pisuva imeto na controllerot students
+ovoj atribut sto ima vrednost students
+studentsController ekogsd kje pocnuva so /students
+kje vazi za sekoja akcija sto e ovde
+/students/nesto
+/students/nestoDrugo
+
+[Route("all")] // students/all //this is the same as the previous one, but this is more specific, because it specifies the HTTP method
+[HttpGet("all")] // students/all //this is the same as the previous one, but this is more specific, because it specifies the HTTP method
+public IActionResult GetAllStudents()
+{
+    return Json(_students);
+}
+
+// students/getById/1 or students/1 -- custome route
+[HttpGet("getById/{id:int}")]
+public IActionResult GetById(int id)
+{
+    return Json(_students.FirstOrDefault(x => x.Id == id));
+}
+
+2 nacina na dodavanje akcija
+mu stavame [Route("all")] akcijata kje bide students/all
+isto taka  [HttpGet("all")] site akcii zapocnuvaat port/students/(koja akcija da se pogodi primer) all/
+ne smee ista aksija so ista ruta
+povekje akcii razlicni route ne smee ista route
+
+nad akcijata si se pisuva ova samo
+
