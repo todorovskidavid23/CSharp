@@ -1,0 +1,18 @@
+﻿@model ASP.NET.MVC.Class04.Models.DTO.StudentWithCourseDTO
+
+<h1>DETAILS FOR STUDENTS</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Full Name</dt>
+        <dd>@Model.FullName</dd>
+        <dt class="col-sm-2">Age</dt>
+        <dd>@Model.Age</dd>
+        <dt class="col-sm-2">Course Name</dt>
+        <dd>@Model.NameOfCourse</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="GetAllStudents">Back to list</a>
+</div>

@@ -1,0 +1,152 @@
+Pred da prodolzime: Povtoruvanje!
+
+Glavna cel Model pred Controller i [Route]
+Akcii Metodi vo WebApi od kade idat podatocite
+Controller so Action Methodi HTTP Request
+
+Modelite se kade sto gi cuvame podatocite opisot na nasata aplikacija
+3 modeli
+1.Domain Modeli zacuvuvanje na baza prperties se povrzuvanje so Baza, Dali samiot da se pravi koga vo baza kje se pretvori so tabela so koli
+ako imame postoecka moze da si se kreiraat tie domainski modeli
+2.View Models ZA PRIKAZ ogranicuvanje na pristap
+3.DTO Prenost na podatoci, sakame da prenseseme od eden server do druug studenserver studentserver da si komuniciraat edni so dri=ugi
+
+go koristime za Security da nemame direkten pristap,
+
+VIEW MODELS
+
+View Del + Sreda
+
+View Models View Controller Models InMemory baza do View i view da ni gi pokaze na browseer i kakov e toj proces VIEW CONTROLLER MODLE MODL CONTROLLER VIEW
+
+=============================
+View del od MVC, View e za prikaz na samite podatoi UserInterface
+So Viwe imame inerakcija so user i prikaz na podatoci
+koga klikame nesto ne nosi do Controller on ide Do model da zmee podatoi da go vrati vo Controller i da pikaze na vo Views
+Viewto se naogha so .cshtml nie koristime view vo ovaa klasa html html,c#, POVRZUVANJE RAZOR syntax,css,js,fraworks,vue,react,angular,bootstrap
+Kreiranje na View, Kade se naogha View, se naogja SEKOGAS vo folder View kade sto sekoj sekoj Controller si ima papka si ima svoe View
+Za sekoja akcija posebno VIEW
+Dynamicki da ni bidat NIE KJE PRAVIME
+======
+MNOGU VAZNO
+TYPES OF VIEW
+1.Regural View najkoristeno: sekoj view sto e kreirano za sekoja akcija, Sekoe view CUSTOM ZA SVOJATA AKCIJA
+2.Partial View : Koga znaeme deka kje korstime HTML ist vo povekje od edno View ,isto kako vo funkcija sto kje se reupotrebuva! navigacisko menu znaemse sto vo getallstudent i vo getcourses NAMESTO VO SEKOE DA DODAVAME SAMO GO VIKAME TOA PARTIAL VIEW STO NI TREBA
+Cesto ne samo so html tuku i so Razor Syntax. Vo edna applikacija imame produkti so karticki imame posebni karticki namesto 10 karticki kako da izledaat i vo tab product i vo tab za obleka.. namesto toa PRAVIME Partial view so pomos na loop da kreirame karticki so HTML sto sodzri edna karticka ZA VO SITE VIEW KJE GO KORISTIME
+Reupotreba na kod vo smoto view
+3.Layout View : View koe sto cshtml class GLAVNA MAIN PAGE sto se startuva vo nego se naogjaat site zaednicki raboti
+pocetni, site linkovi sto se povrzuvanje so html,css,bootstrap,header so meta podatoci,
+NAV BAR sto kje se sluzi za site View stom e ovde vazi za site VIEW sto se vo toj layout
+
+Regual i Layout so _ViewStart
+pak si go imame _ViewStart
+@{
+    Layout = "_Layout";
+}
+
+specijalna class sto se povikuva e ViewStart ustvari Layout
+
+koa se bulda prvo se povukva ViewStart se poazuva se sto e vo Layout gi zima site podatoci i dopolnitelno se sekoe view sto se naogja tamu avtomatski si se povrzuva
+
+
+
+_ViewImports. scepijalna class no razlikata od ViewStart e sto se zapiusvaat site usingsi site instacni ako ni treba model
+namesto da gi pisuvame vo view using, vo ova view import si gi imame tamu
+Se izvrsuva VTORO posle VIEWSTART
+======================================
+
+Razor Syntax
+syntax vo MVC sto mozeme da mesame c# so HTML code, vo eden html mozeme da dodademe c# code
+vo html sto mozevme da dodademe js sega mozeme c# code
+web app kje ja napravime Dynamic namesto da bide Static
+So razor syntax koj se najavil da mu kazeme Dobredojde IME !
+podatokot jas kje go prikazam so Razor Syntax
+
+ZA DA RABOTI RAZOR SYNTAX NI TREBA
+
+Razor Engine
+INTERVIEW 
+Razor engine e Delot koj sto se pretvara od C3 code vo HTML
+mojot c# code dobredojde promenila kje go prevede vo dobredojde promenliva!!!!
+PREVODOT OD c#  VO HTML E RAZOR ENGINE
+Sekogas izvrsuvanjet o na ovoj prevod e na strana na SERVER-SIDE web strana
+prevod vo samiot server a nie na browser mu davame obicen html a ne c# 
+OBICEN PLAIN TEXT GLEDA SAMO GLEDA SAMO HTML KODOT A NE C#
+PREVEDUANJE NA SERVER STRANA
+
+======================================
+
+Zosto koristime razor syntax
+Direktno preku controller si gi zemame vo edna promenliva i kje gi pustame kade sto treba
+Controller i view ednostavna dynamicki web strani
+INTEGRATION
+
+
+READIBILITY
+c# i HTML code citliv kod
+Mora da se stavi @ za da oznacime deka korsitime RAzor syntac
+
+
+PRODUCTIVITY
+
+
+FLEXIBILITY
+Server - Side
+
+NE SMEE DA IMAME GOLEMI BIZNIS LOGIKI
+SAMO PRIKAZI MOZEME USLOVI SO IF ako ne bide ova prikazi ova
+NE GOLEMI BIZNIS LOGIKI
+samo podatoci so nekoe if for while da svrtime i da pokazeme
+======================================
+
+RAZOR SYNTAX
+===================================
+=====================================
+Signle Statement Block
+@{
+var myMessage="Hello World";
+}
+za da se vikne ovaa promenliva
+
+<p> The value of my Message is : @myMessage </p>
+
+@{kolku sto sakame pisuvame
+var greeting;
+var weekDay;
+var greetingMessage
+}
+povukuvame @greetingMessage
+
+
+
+=============================================
+Gradime domain models
+komunuikacija so Baza samo Domainski modeli
+SLEDNO Controlleri so akcija sekoja akcija posebno view
+
+
+
+AKCIJA ZA POST TREBA 
+
+OD DTO VO MODEL
+PRAVIME DTO KO MODEL STO KJE TREBA DA POPOLNI
+
+OD KORISNIKOT ZEMAME GI ZIMAME PODATOCITE SEKOGA VIEW MODEL KORISTIME
+PREVORAME VO DOMAINSKI MODEL
+
+kolku akcii treba da imame 
+POST KOGA IMAME SEKOGAS IMAME GET
+
+GET AKCIJA ZA PRIKAZUVANJE FORMI 
+POST AKCIJA ZA ZAPISUVANJE VO BAZA
+
+So pomos na get treba da se pokaze fomata
+na kopce treba da se vikne nova akcija
+
+za zacuvuvanje vo baza mora GET I POST
+
+PREKU RUTA ILI PREKU OBJEKT ZIMAME PODATOCI
+OD DTO VO DOMAINSKI MODEL
+
+Create mora da se pokaze so forma i popolnuva podatoci i da se zeme so modelot
+Modelo a ne preku route

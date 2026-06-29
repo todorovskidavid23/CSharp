@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ASP.NET.MVC.Class04.Models.DTO.StudentWithCourseDTO>
+
+<h1>Get All Students</h1>
+
+<p> 
+    <a>Create New Student</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Name of Course</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach(var student in Model)
+        {
+        //vo modeel kje imame podatoci parametar students vrakja StudentWithCourseDto imam vnatre povekje studenti i treba da bidat studenti
+        //Model e students vo foreach var student in students ;;;; imame delot parametarot se vika Model delot sto idi do view se zacuvuva vo Model promenliva
+        //radi @model znamede deka Model e ustvari students
+            <tr>
+                <td>@student.FullName</td>
+                <td>@student.Age</td>
+                <td>@student.NameOfCourse</td>
+                <td>@Html.ActionLink("Details", "GetStudentById", new { id=student.Id})</td>
+                @* html tag sto prenasocuva kon druga akcija 
+                    ime na link sto se pojavuva
+                    aksija sto ja gagjame
+                    treto mesto parametarot sto go pustame na linkot i treba da pustime 1 
+                *@
+            </tr>
+        }
+    </tbody>
+</table>
