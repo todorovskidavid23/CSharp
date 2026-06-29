@@ -74,6 +74,9 @@ malo povtoruvanje
 da se prepoznaat kade i kako da se koristat
 
 KAKVI TIPOVI NA MODELI IMAME:
+1model Domain Models Entities
+2model View Models
+3model DataTrasferObjects
 razliki imameod model na model
 VAZNO E DEKA IMA 3 tipa na modeli
 vo MVC imae 3 tipa na modeli
