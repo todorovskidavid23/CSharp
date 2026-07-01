@@ -150,3 +150,49 @@ OD DTO VO DOMAINSKI MODEL
 
 Create mora da se pokaze so forma i popolnuva podatoci i da se zeme so modelot
 Modelo a ne preku route
+
+============================ SREDA CAS ========================
+//Tag Helper
+//view modeli koristime 
+//view bag view data view 
+View prikaz na korisnik preku mvc si kreirame avtomatksi html
+dinamicki
+web strana dinamicki podatoci za da ne bidat static
+
+EDNA CELOSNA FUNKCIONALNOST
+EDNA Akcija cela funkionlanost:
+Glaven den funkcionalnost koe id vrakja zbodime  za IActionResult GetStudentById(int id){}
+Details za student do baza ideme znai mora akcija AKO MORA DA IDAM DO BAZA IDEME SO AKCIJA
+
+ADD Students mora preku web aplikacija
+Dodavanje na baza na student DA SE NAPRAVI FUNKCIONALNOST ZA DIDAVANJE NA STUDENT VO BAZA
+sto gledame prvo
+1.MODELS
+2.Dali entitet ni postoi Domain ili Entities popkite ClassLibrary Domain se vika
+3.Toa povelkuva do baza dali ima takva tabela
+4.dali gi ima kolonive vo baza gledame vo student dali se site porperties kako sto se vo ticket 
+AKO IMAME plus Property
+5.sleden cekor bazata kje fali edna UPDATE NA BAZATA MISLIME DEKA SME VO BAZA, gledame dali
+6.kreiranje na proekt 
+7.Akcija vo Controller, ako e dodavanje vo baza samo CREATE HTTP POST baranje
+8.Kreiranje Akcija AMA za da kreirame logika. 
+9.View na Adminot mu treba forma za popolnuvanje na baza
+10.nikogas ne sakame domanski model vo controller 
+DA ZEMEME PODATOK DA ZEMAM OD VIEW VO DOMAIN
+INPUT POLINJA SEKOE POLE SVOE PROPERTY VIEW MODEL MAPIRANJE TREBA
+
+------UPDATE ILI CREATE OD VIEW DTO MODEL VO DOMANSKI MODEL
+------GET AKO TREBA DA SE PRIKAZE MAPIRANJE OD DOMANSKI MODEL ODI VO VIEW DTO
+
+AUTO MAPPER moze da se istarazat avtomaski gi maprira od view vo model i obratno
+
+
+ZA POST I GET
+za da prikazeme forma da se renderira mora da ima GET so get se priakzuva nesto 
+SLEDEN PREDMET DIREKTNO VO API SE PUSTA GET DRUG FRONT END DRUG KJE PRAVI GET 
+HTML FORM
+RAZOR SYNTAXA
+C# kod vo HTML SERVER SIDE
+plain html inspect element Welcome Avenga kje stoi vo eden h1 ovde e renderirana a browserot ne znae ni sto pravime
+
+TASK od Rabota

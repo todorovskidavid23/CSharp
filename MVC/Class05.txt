@@ -1,0 +1,25 @@
+Class05
+
+Razor Syntax
+
+kako so pomos na helperi da izgradime view
+
+HTML Tag za kreiranje na Html da se renderira vo HTML
+prvite html helperi se iskoreneti ti se helperi sto pomaggat da kreirame html elementi so c# code
+direktno html elementi del od niv gi imame iskoriteno so @Html povikuvame Html helperi i mozeme da kreirame c# code
+pisuvame c#code vo samiot view gotovi metodi sto pozadinski koristat hyml
+
+HTML Helper
+@using (Html.BeginForm("Action","Controller",FormMethod.Post))
+labela @Html.LabelFor(model=>model.FirstName(Propery e na slikata))
+Editor Edit INPUT creairan input
+ValidationMessageFor
+
+
+VIEW SAMO ZA HOME CONTROLLEROT PRAVIME
+
+TAG HELPERI
+da go vrzeme c# code so obicen code
+labe,div.. obcen html
+atributi za tag hlperi
+Tag helperi

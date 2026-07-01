@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ASP.NET.MVC.Class04.Models.DTO.CoursesWithStudentDTO
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +7,36 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+
+<h1>HTML Helpers</h1>
+<hr />
+
+<h3>TextBox: Generates an input element of type text.</h3>
+@Html.TextBox("Name","null", new{@class = "form-control", @placeholder="Enter your name"})
+@* <input placeholder="" class="" /> *@
+
+<h3>TextArea: Generates and textarea element</h3>
+@Html.TextArea("Desciption")
+
+<h1>Tag Helpers</h1>
+<hr />
+<h3>TextBox INPUT</h3>
+@* vrzano so propery kje go pretvori C# kodot 
+da e vrzano so Modelot ako me vrze i nemame RAZKIKATA davaat moznost da si dodades ama ne se koristi asp-for znae dali go ima ova property
+
+OD KOJ MODEL DA SE ZEMAT 
+CoursesWithStudentDto
+
+*@
+<input asp-for="Name" class="form-control" placeholder="Enter your name"  />
+
+
+<select asp-for="Students"  asp-items='new SelectList(new[]{"dav","da","ad"})' class="form-control">
+    <option value="">Select Student</option>
+</select>
+
+@* atributi so
+kako html element bez asp-for e ustvari properties vresnota i se zapisuva vo Description
+
+*@

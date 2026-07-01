@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ASP.NET.MVC.Class04.Models.DTO.StudentDTO>;
+
+    <div>
+        <span>This is a Partial view</span>
+        <ul>
+        @foreach(var student in Model)
+        {
+            <li>@student.FullName</li>
+        
+        }
+        </ul>
+</div>

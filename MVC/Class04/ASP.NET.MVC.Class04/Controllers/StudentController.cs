@@ -1,5 +1,7 @@
 ﻿using ASP.NET.MVC.Class04.DataBase;
 using ASP.NET.MVC.Class04.Models.DTO;
+using ASP.NET.MVC.Class04.Models.Entities;
+using ASP.NET.MVC.Class04.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASP.NET.MVC.Class04.Controllers
@@ -32,6 +34,33 @@ namespace ASP.NET.MVC.Class04.Controllers
             //studentDTO se isprakja vo viewmodel
 
             return View(studentDto);
+        }
+
+        [HttpGet("create")]//GET: /students/create
+
+        public IActionResult CreateStudent()
+        {
+            //input forma ne mi treba nisto
+            return View();
+        }
+
+        //kopce create HTTP post mora da ide do ista routa kako stoe http get mora da bide ista routa
+        [HttpPost("create")]
+        public IActionResult CreateStudent(CreateStudentVM model)
+        {
+            var entity = new Student
+            {
+                //mapiranje od ovoj view da gi napravam vo domanski model da se zacuva vo baza
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                DateOfBirth = model.DateOfBirth,
+                Id = InMemoryDataBase.Students.Count + 1,
+                ActiveCourse = InMemoryDataBase.Courses[1]
+            };
+            //listava .Add
+            InMemoryDataBase.Students.Add(entity);//ako go pustime modelot kje pukne
+            //da ne vrakjame view ovde vrakjame Redirect
+            return RedirectToAction("GetAllStudents");
         }
 
     }
