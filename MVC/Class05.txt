@@ -23,3 +23,9 @@ da go vrzeme c# code so obicen code
 labe,div.. obcen html
 atributi za tag hlperi
 Tag helperi
+for method mesto taka si postojat tag helper asp- tag helper
+avtomatski c# da ni sozdade routes
+prirodna sintaksa na html so atributi
+
+tag hrlper
+<form asp-action="" >

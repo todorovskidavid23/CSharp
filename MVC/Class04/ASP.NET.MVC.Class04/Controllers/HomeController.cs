@@ -15,6 +15,11 @@ namespace ASP.NET.MVC.Class04.Controllers
 
         public IActionResult Index()
         {
+            //dinamicki da si isprakjame data 
+            //viewbag samo sto ne odi so key value parovi so pomos na tocka . kako objekt ViewBag.Key="Value"
+            //da se vikne @ViewBag.Message
+            //View Model pri run ne se fakjaat i greska da se napravi nema da javi greska NE SE BUILDA VIEWBAG I VIEDATA
+            //podobar e ViewModel MNOGU VAZNO go vrakjame celo view 
             return View();
         }
 
